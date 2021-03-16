@@ -13,11 +13,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grabbable
+  - Hands
+  - NoHandCollide
+  - Ignore
+  - Quiver
   - 
   - 
   - 
