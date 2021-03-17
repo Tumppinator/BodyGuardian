@@ -38,13 +38,24 @@ public class Notch : XRSocketInteractor
     {
         if (interactable is Arrow arrow && arrow.selectingInteractor is HandInteractor hand)
         {
-            arrow.OnSelectExit(hand);
-            hand.ForceDeinteract(arrow);
-            pullInteraction.ForceInteract(hand);
-            hand.ForceInteract(pullInteraction);
+            testCoroutine(arrow, hand); // temporary "fix" for issue with arrows dropping
+            //arrow.OnSelectExit(hand);
+            //hand.ForceDeinteract(arrow);
+            //pullInteraction.ForceInteract(hand);
+            //hand.ForceInteract(pullInteraction);
 
             //NotchSounds(attatchClip, 3, 3.3f, 5);
         }
+    }
+
+    IEnumerator testCoroutine(Arrow arrow, HandInteractor hand)
+    {
+        yield return new WaitForSeconds(0.01f);
+        arrow.OnSelectExit(hand);
+        hand.ForceDeinteract(arrow);
+        pullInteraction.ForceInteract(hand);
+        hand.ForceInteract(pullInteraction);
+
     }
 
     private void StoreArrow(XRBaseInteractable interactable)
@@ -65,7 +76,7 @@ public class Notch : XRSocketInteractor
     private void ForceDeselect()
     {
         base.OnSelectExit(currentArrow);
-        currentArrow.OnSelectExit(this);
+        currentArrow.OnSelectExit(this); 
     }
 
     private void ReleaseArrow()

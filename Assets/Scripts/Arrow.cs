@@ -102,7 +102,7 @@ public class Arrow : XRGrabInteractable
         }
     }
 
-    public void OnSelectEnter(XRBaseInteractor interactor)
+    public   void OnSelectEnter(XRBaseInteractor interactor)
     {
         base.OnSelectEnter(interactor);
     }

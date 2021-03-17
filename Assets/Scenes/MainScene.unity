@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 410671150}
   - component: {fileID: 410671153}
   - component: {fileID: 410671149}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_OnSelectExit:
     m_PersistentCalls:
       m_Calls: []
-  m_SelectActionTrigger: 1
+  m_SelectActionTrigger: 2
   m_HideControllerOnSelect: 1
   m_PlayAudioClipOnSelectEnter: 0
   m_AudioClipForOnSelectEnter: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 640668271}
   - component: {fileID: 640668274}
   - component: {fileID: 640668270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightHand Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -948,15 +948,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7066868923373184900, guid: feb4978a0409e8949b0a83861e9237fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.258
       objectReference: {fileID: 0}
     - target: {fileID: 7066868923373184900, guid: feb4978a0409e8949b0a83861e9237fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.244
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7066868923373184900, guid: feb4978a0409e8949b0a83861e9237fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.215
+      value: -0.162
       objectReference: {fileID: 0}
     - target: {fileID: 7066868923373184900, guid: feb4978a0409e8949b0a83861e9237fb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1331,7 +1331,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2358904286562986903, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
       propertyPath: m_InteractionLayerMask.m_Bits
-      value: 823
+      value: 1847
       objectReference: {fileID: 0}
     - target: {fileID: 2358904286562986903, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
       propertyPath: m_OnHoverEnter.m_PersistentCalls.m_Calls.Array.size
@@ -1405,6 +1405,10 @@ PrefabInstance:
       propertyPath: m_OnSelectExit.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3800924967473161482, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
+      propertyPath: m_InteractionLayerMask.m_Bits
+      value: 1847
+      objectReference: {fileID: 0}
     - target: {fileID: 5238485780753677828, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
       propertyPath: m_Name
       value: Bow
@@ -1419,7 +1423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5238485780753677854, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.786
+      value: 3.011
       objectReference: {fileID: 0}
     - target: {fileID: 5238485780753677854, guid: a9e61619facaf864d967bc72ffaecde2, type: 3}
       propertyPath: m_LocalPosition.z

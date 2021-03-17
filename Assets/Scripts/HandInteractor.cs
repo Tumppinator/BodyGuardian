@@ -28,6 +28,12 @@ public class HandInteractor : XRDirectInteractor
             //HandSounds(arrowGrabClip, 3.5f, 3, .8f, 7);
         }
 
+
+        if (interactable is Bow bow)
+        {
+            //bow.GetComponentInChildren<BoxCollider>().enabled = false;
+        }
+
         //if (interactable is Bow bow)
         //{
         //    HandSounds(bowGrabClip, 2.5f, 2.5f, .8f, -3);

@@ -31,7 +31,8 @@ public class Bow : XRGrabInteractable
     }
     private void UpdateBow(float value)
     {
-        Vector3 linePosition = Vector3.forward * Mathf.Lerp(-0.25f, -0.5f, value);
+        Vector3 linePosition = Vector3.forward * Mathf.Lerp(-0.25f, -0.68f, value);
+        //Vector3 linePosition = Vector3.forward * Mathf.Lerp(-0.25f, -0.5f, value);
         notch.localPosition = linePosition;
         lineRenderer.SetPosition(1, linePosition);
     }
