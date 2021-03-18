@@ -37,32 +37,33 @@ public class Arrow : XRGrabInteractable
 
     private void CheckCollision()
     {
-        //if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
-        //{
-        //    if (hitInfo.transform.TryGetComponent(out Rigidbody body))
-        //    {
-        //        if (body.TryGetComponent<Lantern>(out Lantern lantern))
-        //            lantern.TurnOn();
+        if (Physics.Linecast(lastPosition, tip.position, out RaycastHit hitInfo))
+        {
+            if (hitInfo.transform.TryGetComponent(out Rigidbody body))
+            {
+                if (body.TryGetComponent<Enemy1>(out Enemy1 enemy))
+                {
+                    //rb.interpolation = RigidbodyInterpolation.None;
+                    //transform.parent = hitInfo.transform;
+                    //body.AddForce(rb.velocity, ForceMode.Impulse);
+                    Destroy(enemy.gameObject);
+                }
+                
 
-        //        if (body.TryGetComponent<Potion>(out Potion potion))
-        //        {
-        //            potion.BreakPotion();
-        //            return;
-        //        }
-        //        rb.interpolation = RigidbodyInterpolation.None;
-        //        transform.parent = hitInfo.transform;
-        //        body.AddForce(rb.velocity, ForceMode.Impulse);
-        //    }
-        //    Stop();
-        //}
+            }
+            Stop();
+        }
     }
     private void Stop()
     {
         inAir = false;
         SetPhysics(false);
 
+        gameObject.SetActive(false);
+
         //ArrowParticles(false);
         //ArrowSounds(hitClip, 1.5f, 2, .8f, -2);
+
     }
 
     public void Release(float value)

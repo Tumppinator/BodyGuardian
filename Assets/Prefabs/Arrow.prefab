@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 554311838281975191}
   m_Layer: 8
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Arrow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
-  speed: 35
+  speed: 42
   tip: {fileID: 7829741186962108687}
   sphereCollider: {fileID: 554311838281975191}
 --- !u!65 &1753998380549932820
