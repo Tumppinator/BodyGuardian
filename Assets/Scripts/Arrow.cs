@@ -11,6 +11,8 @@ public class Arrow : XRGrabInteractable
     private Rigidbody rb;
     public Collider sphereCollider;
 
+    EnemySpawner spawner;
+
     //[Header("Particles")]
     //public ParticleSystem trailParticle;
     //public ParticleSystem hitParticle;
@@ -26,6 +28,12 @@ public class Arrow : XRGrabInteractable
         rb = GetComponent<Rigidbody>();
 
     }
+
+    private void Start()
+    {
+        spawner = FindObjectOfType<EnemySpawner>();
+    }
+
     private void FixedUpdate()
     {
         if (inAir)
@@ -47,6 +55,7 @@ public class Arrow : XRGrabInteractable
                     //transform.parent = hitInfo.transform;
                     //body.AddForce(rb.velocity, ForceMode.Impulse);
                     Destroy(enemy.gameObject);
+                    spawner.IncreaseDestroyedEnemiesAmount();
                 }
                 
 
