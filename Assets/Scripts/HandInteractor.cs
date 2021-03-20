@@ -6,9 +6,17 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HandInteractor : XRDirectInteractor
 {
 
-    //[Header("Sounds")]
-    //public AudioClip bowGrabClip;
-    //public AudioClip arrowGrabClip;
+    [Header("Sounds")]
+    public AudioClip bowGrabClip;
+    public AudioClip arrowGrabClip;
+
+    AudioSource audioSource;
+
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void ForceInteract(XRBaseInteractable interactable)
     {
@@ -25,13 +33,16 @@ public class HandInteractor : XRDirectInteractor
         if (interactable is Arrow arrow)
         {
             arrow.sphereCollider.enabled = false;
-            //HandSounds(arrowGrabClip, 3.5f, 3, .8f, 7);
+            //audioSource.volume = 0.5f;
+            //audioSource.clip = arrowGrabClip;
+            //audioSource.Play();
         }
 
 
         if (interactable is Bow bow)
         {
-            //bow.GetComponentInChildren<BoxCollider>().enabled = false;
+            audioSource.clip = bowGrabClip;
+            audioSource.Play();
         }
 
         //if (interactable is Bow bow)
