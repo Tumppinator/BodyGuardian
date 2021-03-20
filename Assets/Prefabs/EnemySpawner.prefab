@@ -234,6 +234,7 @@ MonoBehaviour:
   waveConfigs:
   - {fileID: 11400000, guid: 352d62c24ea52884d83ba999885864b2, type: 2}
   - {fileID: 11400000, guid: 119d585e256a7b4438bc3eb22cd776d3, type: 2}
+  - {fileID: 11400000, guid: 501e30197cfb8bc42b15407fde95d0b7, type: 2}
   spawnPoints:
   - {fileID: 8163983202152727351}
   - {fileID: 2923439872090362701}

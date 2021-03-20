@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -9,19 +10,19 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform[] spawnPoints;
 
-
-    [SerializeField] float minSpawnDelay = 1f;
-    [SerializeField] float maxSpawnDelay = 6f;
+    //[SerializeField] float minSpawnDelay = 1f;
+    //[SerializeField] float maxSpawnDelay = 6f;
 
     bool spawn = false;
     bool waveStarted = false;
     int enemyAmount = 0;
-    int enemyAmountInWave = 0;
     int destroyedEnemies = 0;
     int enemySetIndex = 0;
     int maxEnemies = 0;
 
     Score score;
+
+    public UnityEvent displayText;
 
 
     private void Start()
@@ -35,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
         {
             spawn = true;
             waveStarted = true;
+            displayText.Invoke();
             var currentWave = waveConfigs[waveIndex];
             StartCoroutine(Spawner(currentWave));
         }
@@ -47,6 +49,7 @@ public class EnemySpawner : MonoBehaviour
         yield return new WaitForSeconds(2f);
         waveStarted = false;
         enemySetIndex = 0;
+        destroyedEnemies = 0;
         waveIndex++;
     }
 
@@ -67,7 +70,6 @@ public class EnemySpawner : MonoBehaviour
                 {
                     spawn = false;
                     StartCoroutine(WaitBetweenWaves(currentWave));
-                    //currentWave = waveConfigs[waveIndex];
                 }
             }
         }
@@ -89,6 +91,11 @@ public class EnemySpawner : MonoBehaviour
     public void IncreaseDestroyedEnemiesAmount()
     {
         destroyedEnemies++;
+    }
+
+    public int GetWaveIndex()
+    {
+        return waveIndex + 1;
     }
 
 }
