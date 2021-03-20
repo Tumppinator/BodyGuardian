@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour
 
     NavMeshAgent enemy;
     GameObject player;
+    [SerializeField] ParticleSystem explosion;
 
     private void Start()
     {
@@ -22,4 +23,9 @@ public class Enemy1 : MonoBehaviour
         enemy.destination = player.transform.position;
     }
 
+    private void OnDestroy()
+    {
+        var explosionEffect = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z), transform.rotation);
+        explosionEffect.Play();
+    }
 }

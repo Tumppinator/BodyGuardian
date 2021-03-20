@@ -7,6 +7,7 @@ public class TP_Player : MonoBehaviour
 {
     [SerializeField] float movementMultiplier = 2f;
     [SerializeField] float radius = 17f;
+    [SerializeField] float rotationSpeed = 100f;
 
     Vector3 cameraPos;
     Vector3 centerPosition;
@@ -45,6 +46,8 @@ public class TP_Player : MonoBehaviour
         {
             transform.position = new Vector3(finalXpos, transform.position.y, finalZpos);
         }
+
+        transform.Rotate(new Vector3(0f, rotationSpeed, 0f) * Time.deltaTime);
 
     }
 

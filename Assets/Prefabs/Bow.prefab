@@ -792,7 +792,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 544f7da9aaf3c9d4db5236c4bbd200b2, type: 2}
+  - {fileID: 2100000, guid: 97d1cba2785f20a44893728a7d75087d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1243,8 +1243,8 @@ MonoBehaviour:
   start: {fileID: 6518287975485635964}
   end: {fileID: 5454632112033644067}
   stringLine: {fileID: 4242816076233520327}
-  stringNormalCol: {r: 0, g: 0, b: 0, a: 0}
-  stringPulledCol: {r: 0.7169812, g: 0.13122104, b: 0.31977633, a: 0}
+  stringNormalCol: {r: 0, g: 0, b: 0, a: 1}
+  stringPulledCol: {r: 0.98039216, g: 0, b: 0.4745098, a: 1}
 --- !u!114 &1406458541779666712
 MonoBehaviour:
   m_ObjectHideFlags: 0
