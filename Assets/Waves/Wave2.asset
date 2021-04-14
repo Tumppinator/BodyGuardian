@@ -16,9 +16,9 @@ MonoBehaviour:
   - {fileID: 8997253609735463398, guid: fcc939c03935447439056ab23dcbc155, type: 3}
   - {fileID: 8997253609735463398, guid: 4670c5f92aa18984e887f48269f6f5ac, type: 3}
   timeBetweenSpawns:
-  - 3
+  - 1.25
   - 4
-  numberOfEnemies: 0200000001000000
+  numberOfEnemies: 0700000002000000
   moveSpeed:
   - 1.7
   - 1.7

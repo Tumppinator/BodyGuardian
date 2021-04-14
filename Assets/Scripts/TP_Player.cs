@@ -8,6 +8,10 @@ public class TP_Player : MonoBehaviour
     [SerializeField] float movementMultiplier = 2f;
     [SerializeField] float radius = 17f;
     [SerializeField] float rotationSpeed = 100f;
+    [SerializeField] float yMovementMultiplier = 7f;
+    [SerializeField] float yMovementMin = 1f;
+    [SerializeField] float yMovementMax = 3f;
+    [SerializeField] float yMovementOffset = 1f;
 
     Vector3 cameraPos;
     Vector3 centerPosition;
@@ -15,6 +19,7 @@ public class TP_Player : MonoBehaviour
     float distance = 0f;
     float finalXpos;
     float finalZpos;
+    float finalYpos;
 
     Level level;
 
@@ -33,6 +38,8 @@ public class TP_Player : MonoBehaviour
         cameraPos = Camera.main.transform.position;
         finalXpos = cameraPos.x * movementMultiplier;
         finalZpos = cameraPos.z * movementMultiplier + originalZpos;
+        finalYpos = cameraPos.y * yMovementMultiplier + yMovementOffset;
+        float clampedYpos = Mathf.Clamp(finalYpos, yMovementMin, yMovementMax);
 
         distance = Vector3.Distance(centerPosition, transform.position);
 
@@ -44,7 +51,7 @@ public class TP_Player : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(finalXpos, transform.position.y, finalZpos);
+            transform.position = new Vector3(finalXpos, clampedYpos, finalZpos);
         }
 
         transform.Rotate(new Vector3(0f, rotationSpeed, 0f) * Time.deltaTime);

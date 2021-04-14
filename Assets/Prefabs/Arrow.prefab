@@ -255,7 +255,7 @@ MonoBehaviour:
   tip: {fileID: 7829741186962108687}
   sphereCollider: {fileID: 554311838281975191}
   launchClip: {fileID: 8300000, guid: 39ae16bfb52d94843ba8699f3cec4387, type: 3}
-  hitClip: {fileID: 8300000, guid: ea21c8bbddeaa674888f6a018e353605, type: 3}
+  hitClip: {fileID: 8300000, guid: 44207d9e47079ae4287a7f7add36e8e8, type: 3}
   hitEnemyClip: {fileID: 8300000, guid: d1e2102596f9b0740909de7bdf4dcb56, type: 3}
 --- !u!65 &1753998380549932820
 BoxCollider:

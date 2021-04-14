@@ -49,6 +49,10 @@ MonoBehaviour:
   movementMultiplier: 35
   radius: 17.5
   rotationSpeed: 100
+  yMovementMultiplier: 10
+  yMovementMin: 0.2
+  yMovementMax: 2
+  yMovementOffset: -50
 --- !u!136 &3314474365591037094
 CapsuleCollider:
   m_ObjectHideFlags: 0

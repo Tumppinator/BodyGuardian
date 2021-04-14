@@ -72,6 +72,7 @@ public class Arrow : XRGrabInteractable
                     //transform.parent = hitInfo.transform;
                     //body.AddForce(rb.velocity, ForceMode.Impulse);
                     collidedWithEnemy = true;
+                    enemy.SpawnExplosionEffect();
                     Destroy(enemy.gameObject);
                     audioSource.clip = hitEnemyClip;
                     audioSource.Play();

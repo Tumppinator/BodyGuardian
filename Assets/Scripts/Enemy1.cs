@@ -23,9 +23,9 @@ public class Enemy1 : MonoBehaviour
         enemy.destination = player.transform.position;
     }
 
-    private void OnDestroy()
+    public void SpawnExplosionEffect()
     {
-        var explosionEffect = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y + 0.7f, transform.position.z), transform.rotation);
+        var explosionEffect = Instantiate(explosion, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
         explosionEffect.Play();
     }
 }

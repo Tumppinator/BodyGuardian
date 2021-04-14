@@ -7,7 +7,12 @@ public class Score : MonoBehaviour
 
     private static bool startGame = false;
 
-  
+
+    private void Start()
+    {
+        startGame = false;
+    }
+
     public void SetStartGame()
     {
         startGame = true;
