@@ -22,6 +22,7 @@ public class TP_Player : MonoBehaviour
     float finalYpos;
 
     Level level;
+    Score score;
 
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class TP_Player : MonoBehaviour
         originalZpos = transform.position.z;
         centerPosition = transform.position;
         level = FindObjectOfType<Level>();
+        score = FindObjectOfType<Score>();
     }
 
     // Update is called once per frame
@@ -62,7 +64,15 @@ public class TP_Player : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            level.LoadMainMenu();
+            PlayerPrefs.SetInt("Score", score.GetScore());
+            if (PlayerPrefs.HasKey("HighScore"))
+            {
+                if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore", 0))
+                {
+                    PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
+                }
+            }
+            level.LoadGameOver();
         }
     }
 }

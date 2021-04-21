@@ -12,6 +12,7 @@ public class Arrow : XRGrabInteractable
     public Collider sphereCollider;
     bool collided = false;
     bool collidedWithEnemy = false;
+    Score score;
 
     EnemySpawner spawner;
 
@@ -28,7 +29,7 @@ public class Arrow : XRGrabInteractable
     AudioSource audioSource;
     
     protected override void Awake()
-    {
+    {   
         base.Awake();
         rb = GetComponent<Rigidbody>();
 
@@ -38,6 +39,7 @@ public class Arrow : XRGrabInteractable
     {
         spawner = FindObjectOfType<EnemySpawner>();
         audioSource = GetComponent<AudioSource>();
+        score = FindObjectOfType<Score>();
     }
 
     private void FixedUpdate()
@@ -72,6 +74,7 @@ public class Arrow : XRGrabInteractable
                     //transform.parent = hitInfo.transform;
                     //body.AddForce(rb.velocity, ForceMode.Impulse);
                     collidedWithEnemy = true;
+                    score.UpdateScore();
                     enemy.SpawnExplosionEffect();
                     Destroy(enemy.gameObject);
                     audioSource.clip = hitEnemyClip;

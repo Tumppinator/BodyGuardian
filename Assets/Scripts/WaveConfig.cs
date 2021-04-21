@@ -8,7 +8,6 @@ public class WaveConfig : ScriptableObject
     [SerializeField] GameObject[] enemyPrefabs;
     [SerializeField] float[] timeBetweenSpawns;
     [SerializeField] int[] numberOfEnemies;
-    [SerializeField] float[] moveSpeed;
 
     public GameObject GetEnemyPrefabsAtIndex(int index) { return enemyPrefabs[index]; }
 
@@ -17,7 +16,6 @@ public class WaveConfig : ScriptableObject
 
     public int GetNumberOfEnemiesAtIndex(int index) { return numberOfEnemies[index]; }
 
-    public float GetMoveSpeedAtIndex(int index) { return moveSpeed[index]; }
 
     public int GetEnemyPrefabsLength()
     {

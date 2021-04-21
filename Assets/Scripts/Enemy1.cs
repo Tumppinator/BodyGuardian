@@ -11,6 +11,7 @@ public class Enemy1 : MonoBehaviour
     GameObject player;
     [SerializeField] ParticleSystem explosion;
 
+
     private void Start()
     {
         enemy = GetComponent<NavMeshAgent>();

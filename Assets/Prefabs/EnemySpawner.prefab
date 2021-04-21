@@ -235,6 +235,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 352d62c24ea52884d83ba999885864b2, type: 2}
   - {fileID: 11400000, guid: 119d585e256a7b4438bc3eb22cd776d3, type: 2}
   - {fileID: 11400000, guid: 501e30197cfb8bc42b15407fde95d0b7, type: 2}
+  - {fileID: 11400000, guid: eb1776be7ed90434da80697c3e0c167c, type: 2}
   spawnPoints:
   - {fileID: 8163983202152727351}
   - {fileID: 2923439872090362701}
@@ -244,8 +245,9 @@ MonoBehaviour:
   - {fileID: 3560732329295456169}
   - {fileID: 2856231579181608655}
   - {fileID: 979944320839338048}
-  minSpawnDelay: 2
-  maxSpawnDelay: 8
+  displayText:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &7120500009152538392
 GameObject:
   m_ObjectHideFlags: 0
