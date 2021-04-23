@@ -12,7 +12,11 @@ public class TP_Player : MonoBehaviour
     [SerializeField] float yMovementMin = 1f;
     [SerializeField] float yMovementMax = 3f;
     [SerializeField] float yMovementOffset = 1f;
+    [SerializeField] ParticleSystem explosionVFX;
+    [SerializeField] AudioClip explosionClip;
+    [SerializeField] AudioClip laughClip;
 
+    AudioSource audioSource;
     Vector3 cameraPos;
     Vector3 centerPosition;
     float originalZpos;
@@ -20,6 +24,7 @@ public class TP_Player : MonoBehaviour
     float finalXpos;
     float finalZpos;
     float finalYpos;
+    bool gameOver = false;
 
     Level level;
     Score score;
@@ -32,6 +37,7 @@ public class TP_Player : MonoBehaviour
         centerPosition = transform.position;
         level = FindObjectOfType<Level>();
         score = FindObjectOfType<Score>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -60,10 +66,16 @@ public class TP_Player : MonoBehaviour
 
     }
 
+    public bool GetGameOver()
+    {
+        return gameOver;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy")
+        if (other.tag == "Enemy" && !gameOver)
         {
+            gameOver = true;
             PlayerPrefs.SetInt("Score", score.GetScore());
             if (PlayerPrefs.HasKey("HighScore"))
             {
@@ -72,7 +84,23 @@ public class TP_Player : MonoBehaviour
                     PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
                 }
             }
-            level.LoadGameOver();
+            StartCoroutine(AfterCollision());
         }
+    }
+
+    private IEnumerator AfterCollision()
+    {
+        var explosionEffect = Instantiate(explosionVFX, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
+        explosionEffect.Play();
+        audioSource.clip = explosionClip;
+        audioSource.Play();
+
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            this.transform.GetChild(i).gameObject.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(3.0f);
+        level.LoadGameOver();
     }
 }
