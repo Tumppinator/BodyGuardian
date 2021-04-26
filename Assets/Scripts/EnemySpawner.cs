@@ -10,9 +10,6 @@ public class EnemySpawner : MonoBehaviour
 
     [SerializeField] Transform[] spawnPoints;
 
-    //[SerializeField] float minSpawnDelay = 1f;
-    //[SerializeField] float maxSpawnDelay = 6f;
-
 
     bool spawn = false;
     bool waveStarted = false;

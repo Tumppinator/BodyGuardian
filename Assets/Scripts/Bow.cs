@@ -8,8 +8,6 @@ public class Bow : XRGrabInteractable
     private PullInteraction pullInteraction;
     private LineRenderer lineRenderer;
 
-    //[Header("Sound")]
-    //public AudioClip grabClip;
 
     [Header("Quiver")]
     public Transform quiver;
@@ -32,7 +30,6 @@ public class Bow : XRGrabInteractable
     private void UpdateBow(float value)
     {
         Vector3 linePosition = Vector3.forward * Mathf.Lerp(-0.25f, -0.68f, value);
-        //Vector3 linePosition = Vector3.forward * Mathf.Lerp(-0.25f, -0.5f, value);
         notch.localPosition = linePosition;
         lineRenderer.SetPosition(1, linePosition);
     }
@@ -41,12 +38,6 @@ public class Bow : XRGrabInteractable
     {
         base.OnSelectEnter(interactor);
     }
-
-    //public void BowHaptic(XRBaseInteractor interactor)
-    //{
-    //    if (interactor.TryGetComponent(out XRController controller))
-    //        HapticManager.Impulse(1, .05f, controller.inputDevice);
-    //}
 
     public void OffsetQuiver(XRBaseInteractor interactor)
     {

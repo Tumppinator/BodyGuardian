@@ -46,16 +46,7 @@ public class Notch : XRSocketInteractor
     {
         if (interactable is Arrow arrow && arrow.selectingInteractor is HandInteractor hand)
         {
-            //audioSource.clip = attatchClip;
-            //audioSource.Play();
-
             testCoroutine(arrow, hand); // temporary "fix" for issue with arrows dropping
-            //arrow.OnSelectExit(hand);
-            //hand.ForceDeinteract(arrow);
-            //pullInteraction.ForceInteract(hand);
-            //hand.ForceInteract(pullInteraction);
-
-            //NotchSounds(attatchClip, 3, 3.3f, 5);
         }
     }
 
@@ -101,15 +92,4 @@ public class Notch : XRSocketInteractor
     {
         get { return XRBaseInteractable.MovementType.Instantaneous; }
     }
-
-    //void NotchSounds(AudioClip clip, float minPitch, float maxPitch, int id)
-    //{
-    //    SFXPlayer.Instance.PlaySFX(clip, transform.position, new SFXPlayer.PlayParameters()
-    //    {
-    //        Pitch = Random.Range(minPitch, maxPitch),
-    //        Volume = 1.0f,
-    //        SourceID = id
-    //    });
-    //}
-
 }

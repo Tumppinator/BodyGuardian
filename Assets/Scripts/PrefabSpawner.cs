@@ -9,8 +9,6 @@ public class PrefabSpawner : XRSocketInteractor
     private Vector3 attachOffset = Vector3.zero;
     public Arrow currentArrow;
 
-    //[Header("Sound")]
-    //public AudioClip grabClip;
 
     protected override void Awake()
     {

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-
     private static bool startGame = false;
     private static int score = 0;
     private float time = 0;

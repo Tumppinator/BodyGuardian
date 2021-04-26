@@ -9,7 +9,6 @@ public class WaveDisplay : MonoBehaviour
     TextMeshProUGUI text;
     EnemySpawner spawner;
 
-    // Start is called before the first frame update
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();

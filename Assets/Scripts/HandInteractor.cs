@@ -33,9 +33,6 @@ public class HandInteractor : XRDirectInteractor
         if (interactable is Arrow arrow)
         {
             arrow.sphereCollider.enabled = false;
-            //audioSource.volume = 0.5f;
-            //audioSource.clip = arrowGrabClip;
-            //audioSource.Play();
         }
 
 
@@ -44,23 +41,5 @@ public class HandInteractor : XRDirectInteractor
             audioSource.clip = bowGrabClip;
             audioSource.Play();
         }
-
-        //if (interactable is Bow bow)
-        //{
-        //    HandSounds(bowGrabClip, 2.5f, 2.5f, .8f, -3);
-        //}
-
-
     }
-
-
-    //void HandSounds(AudioClip clip, float minPitch, float maxPitch, float volume, int id)
-    //{
-    //    SFXPlayer.Instance.PlaySFX(clip, transform.position, new SFXPlayer.PlayParameters()
-    //    {
-    //        Pitch = Random.Range(minPitch, maxPitch),
-    //        Volume = volume,
-    //        SourceID = id
-    //    });
-    //}
 }

@@ -17,19 +17,4 @@ public class HapticManager
             }
         }
     }
-
-    //List<InputDevice> devices = new List<InputDevice>();
-    //InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Right, devices);
-    //foreach (var device in devices)
-    //{
-    //    UnityEngine.XR.HapticCapabilities capabilities;
-    //    if (device.TryGetHapticCapabilities(out capabilities))
-    //    {
-    //        if (capabilities.supportsImpulse)
-    //        {
-    //            uint channel = 0;
-    //            device.SendHapticImpulse(channel, amplitude, duration);
-    //        }
-    //    }
-    //}
 }

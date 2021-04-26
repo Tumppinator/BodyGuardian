@@ -16,10 +16,6 @@ public class Arrow : XRGrabInteractable
     TP_Player TP_Player;
     EnemySpawner spawner;
 
-    //[Header("Particles")]
-    //public ParticleSystem trailParticle;
-    //public ParticleSystem hitParticle;
-    //public TrailRenderer trailRenderer;
 
     [Header("Sound")]
     [SerializeField] AudioClip launchClip;
@@ -71,9 +67,6 @@ public class Arrow : XRGrabInteractable
             {
                 if (body.TryGetComponent<Enemy1>(out Enemy1 enemy) && !TP_Player.GetGameOver())
                 {
-                    //rb.interpolation = RigidbodyInterpolation.None;
-                    //transform.parent = hitInfo.transform;
-                    //body.AddForce(rb.velocity, ForceMode.Impulse);
                     collidedWithEnemy = true;
                     score.UpdateScore();
                     enemy.SpawnExplosionEffect();
@@ -82,8 +75,6 @@ public class Arrow : XRGrabInteractable
                     audioSource.Play();
                     spawner.IncreaseDestroyedEnemiesAmount();
                 }
-                
-
             }
             Stop();
         }
@@ -98,11 +89,6 @@ public class Arrow : XRGrabInteractable
             audioSource.clip = hitClip;
             audioSource.Play();
         }
-
-        //gameObject.SetActive(false);
-
-        //ArrowParticles(false);
-
     }
 
     public void Release(float value)
@@ -114,7 +100,6 @@ public class Arrow : XRGrabInteractable
 
         lastPosition = tip.position;
 
-        //ArrowParticles(true);
         audioSource.clip = launchClip;
         audioSource.Play();
     }
@@ -161,30 +146,4 @@ public class Arrow : XRGrabInteractable
                 HapticManager.Impulse(.7f, .05f, controller.inputDevice);
         }
     }
-
-    //void ArrowParticles(bool release)
-    //{
-    //    if (release)
-    //    {
-    //        trailParticle.Play();
-    //        trailRenderer.emitting = true;
-    //    }
-    //    else
-    //    {
-    //        trailParticle.Stop();
-    //        hitParticle.Play();
-    //        trailRenderer.emitting = false;
-    //    }
-    //}
-
-    //void ArrowSounds(AudioClip clip, float minPitch, float maxPitch, float volume, int id)
-    //{
-    //    SFXPlayer.Instance.PlaySFX(clip, transform.position, new SFXPlayer.PlayParameters()
-    //    {
-    //        Pitch = Random.Range(minPitch, maxPitch),
-    //        Volume = volume,
-    //        SourceID = id
-    //    });
-    //}
-
 }
