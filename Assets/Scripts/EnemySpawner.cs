@@ -13,6 +13,7 @@ public class EnemySpawner : MonoBehaviour
     //[SerializeField] float minSpawnDelay = 1f;
     //[SerializeField] float maxSpawnDelay = 6f;
 
+
     bool spawn = false;
     bool waveStarted = false;
     int enemyAmount = 0;
@@ -20,6 +21,7 @@ public class EnemySpawner : MonoBehaviour
     int enemySetIndex = 0;
     int maxEnemies = 0;
 
+    AudioSource audioSource;
     Score score;
 
     public UnityEvent displayText;
@@ -28,6 +30,7 @@ public class EnemySpawner : MonoBehaviour
     private void Start()
     {
         score = FindObjectOfType<Score>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -46,6 +49,7 @@ public class EnemySpawner : MonoBehaviour
     IEnumerator WaitBetweenWaves(WaveConfig currentWave)
     {
         yield return new WaitUntil(() => (destroyedEnemies >= currentWave.GetEnemiesAmountInWave()));
+        audioSource.Play();
         yield return new WaitForSeconds(2f);
         waveStarted = false;
         enemySetIndex = 0;

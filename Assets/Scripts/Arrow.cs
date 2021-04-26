@@ -13,7 +13,7 @@ public class Arrow : XRGrabInteractable
     bool collided = false;
     bool collidedWithEnemy = false;
     Score score;
-
+    TP_Player TP_Player;
     EnemySpawner spawner;
 
     //[Header("Particles")]
@@ -40,6 +40,7 @@ public class Arrow : XRGrabInteractable
         spawner = FindObjectOfType<EnemySpawner>();
         audioSource = GetComponent<AudioSource>();
         score = FindObjectOfType<Score>();
+        TP_Player = FindObjectOfType<TP_Player>();
     }
 
     private void FixedUpdate()
@@ -68,7 +69,7 @@ public class Arrow : XRGrabInteractable
         {
             if (hitInfo.transform.TryGetComponent(out Rigidbody body))
             {
-                if (body.TryGetComponent<Enemy1>(out Enemy1 enemy))
+                if (body.TryGetComponent<Enemy1>(out Enemy1 enemy) && !TP_Player.GetGameOver())
                 {
                     //rb.interpolation = RigidbodyInterpolation.None;
                     //transform.parent = hitInfo.transform;

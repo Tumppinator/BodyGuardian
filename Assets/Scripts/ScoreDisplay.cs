@@ -7,10 +7,12 @@ using TMPro;
 public class ScoreDisplay : MonoBehaviour
 {
     TextMeshProUGUI Scoretext;
+    Score score;
 
     private void Start()
     {
         Scoretext = GetComponent<TextMeshProUGUI>();
+        score = FindObjectOfType<Score>();
     }
 
     private void Update()

@@ -38,6 +38,7 @@ public class TP_Player : MonoBehaviour
         level = FindObjectOfType<Level>();
         score = FindObjectOfType<Score>();
         audioSource = GetComponent<AudioSource>();
+        PlayerPrefs.SetInt("Score", 0);
     }
 
     // Update is called once per frame
@@ -76,7 +77,6 @@ public class TP_Player : MonoBehaviour
         if (other.tag == "Enemy" && !gameOver)
         {
             gameOver = true;
-            PlayerPrefs.SetInt("Score", score.GetScore());
             if (PlayerPrefs.HasKey("HighScore"))
             {
                 if (PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore", 0))

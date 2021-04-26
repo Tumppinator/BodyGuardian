@@ -40,13 +40,13 @@ public class Score : MonoBehaviour
     public void UpdateScore()
     {
         score -= (int)(time * 2.5f);
-        print(score);
         time = 0;
         score += 100;
         if(score < 0)
         {
             score = 0;
         }
+        PlayerPrefs.SetInt("Score", score);
     }
 
     public int GetScore()

@@ -6,7 +6,7 @@ public class BobbingObject : MonoBehaviour
 {
     float originalY;
 
-    float floatStrength = 15f;
+    float floatStrength = 10f;
 
     void Start()
     {

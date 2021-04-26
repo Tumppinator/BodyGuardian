@@ -15,9 +15,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 8997253609735463398, guid: 4be80e06e0ee69741847b0b2189eaba5, type: 3}
   - {fileID: 8997253609735463398, guid: 4670c5f92aa18984e887f48269f6f5ac, type: 3}
-  - {fileID: 8997253609735463398, guid: 4be80e06e0ee69741847b0b2189eaba5, type: 3}
+  - {fileID: 8997253609735463398, guid: fcc939c03935447439056ab23dcbc155, type: 3}
   timeBetweenSpawns:
   - 2
-  - 2
-  - 2
-  numberOfEnemies: 020000000400000002000000
+  - 1.7
+  - 0.7
+  numberOfEnemies: 030000000400000004000000
