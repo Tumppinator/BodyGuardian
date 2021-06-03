@@ -1,2 +1,2 @@
 # BodyGuardian
-https://www.youtube.com/watch?v=ih3KrPiGljI
+Gameplay video: https://www.youtube.com/watch?v=ih3KrPiGljI
